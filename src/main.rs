@@ -94,6 +94,7 @@ fn spawn(mut commands: Commands, helmet: Res<HelmetHandle>, gltf_assets: Res<Ass
 fn label(mut commands: Commands, named_nodes: Query<(Entity, &Name)>) {
     println!("Labeling {} nodes", named_nodes.iter().len());
     for (entity, name) in named_nodes.iter() {
+        println!("{entity:?}: {}", name.as_str()); 
         match name.as_str() {
             "RubberWood_low" => {
                 println!("Found node: {entity:?}");
